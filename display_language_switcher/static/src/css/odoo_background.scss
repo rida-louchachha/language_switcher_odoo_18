@@ -1,0 +1,405 @@
+// // /*
+// //  * License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
+// //  */
+// //
+// // /* Define a custom font 'Poppins' for the UI */
+// // @font-face {
+// //     font-family: poppins;
+// //     src: url(/display_language_switcher/static/src/font/Poppins-Bold.ttf)
+// // }
+// //
+// // /*-----------------------*/
+// // /* Define grayscale color variables */
+// // /*-----------------------*/
+// // $gray-base:              #000; // base black
+// // $gray-darker:            lighten($gray-base, 13.5%); // dark gray
+// // $gray-dark:              #666; // medium dark gray
+// // $gray:                   #777; // standard gray
+// // $gray-light:             #AEA79F; // light gray
+// // $gray-lighter:           lighten($gray-base, 93.5%); // very light gray
+// //
+// // /*-----------------------*/
+// // /* Custom Branding Colors */
+// // /*-----------------------*/
+// // // Primary color used for headers, navbar, loading screen, etc.
+// // $brand-primary: #875a7b;
+// // // Secondary color used for buttons
+// // $brand-secondary: #00A09D;
+// //
+// // $brand-primary-dark: darken($brand-primary, 10%);
+// // $brand-primary-light: lighten($brand-primary, 10%);
+// // $brand-secondary-dark: darken($brand-secondary, 10%);
+// // $brand-secondary-light: lighten($brand-secondary, 10%);
+// //
+// // /*-----------------------*/
+// // /* Base Styling */
+// // /*-----------------------*/
+// // body {
+// //     font-family: "Poppins"; // Apply custom font globally
+// //     background-color: grey !important; // Change body background color
+// // }
+// //
+// // /*-----------------------*/
+// // /* Tooltip */
+// // /*-----------------------*/
+// // .tooltip .tooltip-inner .oe_tooltip_string {
+// //     background-color: $brand-primary; // Set tooltip background to primary color
+// // }
+// //
+// // /*-----------------------*/
+// // /* Loading Screen */
+// // /*-----------------------*/
+// // .o_loading {
+// //     background-color: $brand-primary; // Customize loading screen color
+// // }
+// //
+// // /*-----------------------*/
+// // /* Main Top Navbar */
+// // /*-----------------------*/
+// // .o_main_navbar {
+// //     background-color : $brand-primary; // Set navbar background color
+// // }
+// //
+// // .o_main_navbar > a:hover,
+// // .o_main_navbar > a:focus,
+// // .o_main_navbar > button:hover,
+// // .o_main_navbar > button:focus {
+// //     background-color: $brand-primary-dark; // Darker background on hover/focus
+// //     color: inherit; // Keep text color unchanged
+// // }
+// //
+// // .o_main_navbar > ul > li > a:hover,
+// // .o_main_navbar > ul > li > label:hover {
+// //     background-color: $brand-primary-dark; // Darker background on menu item hover
+// // }
+// //
+// // .o_main_navbar .show .dropdown-toggle {
+// //     background-color: $brand-primary-dark; // Dropdown active state styling
+// // }
+// //
+// // /*-----------------------*/
+// // /* Kanban Styling */
+// // /*-----------------------*/
+// // .o_kanban_view .oe_kanban_color_11::after {
+// //     background-color: $brand-primary; // Modify a specific kanban color tag
+// // }
+// //
+// // /*-----------------------*/
+// // /* Binary File Button */
+// // /*-----------------------*/
+// // .o_control_panel .o_cp_sidebar .o_hidden_input_file .o_form_binary_form span {
+// //     color: $gray-dark !important; // Set "Add file" button text color
+// // }
+// //
+// // /*-----------------------*/
+// // /* Buttons Styling */
+// // /*-----------------------*/
+// // .btn {
+// //     border-radius: 0px; // Remove button roundness
+// // }
+// //
+// // .btn-primary {
+// //     color: #fff;
+// //     background-color: $brand-secondary; // Main button color
+// //     border-color: $brand-secondary-light; // Slightly lighter border
+// // }
+// //
+// // .btn-primary:hover {
+// //     color: #fff;
+// //     background-color: $brand-secondary-dark; // Darker on hover
+// //     border-color: $brand-secondary-light;
+// // }
+// //
+// // .btn-secondary {
+// //     border: none;
+// //     color: $brand-secondary; // Only colored text, no background
+// // }
+// //
+// // .btn:active, .btn.active {
+// //     box-shadow: none;
+// //     background-color: #eee !important; // Active state neutral background
+// // }
+// //
+// // .btn-group.open .dropdown-toggle {
+// //     box-shadow: none;
+// //     background-color: #eee !important; // Active group state
+// // }
+// //
+// // /* Hyperlink-style button hover effect */
+// // .btn-link {
+// //     @include o-hover-text-color($brand-secondary, $brand-secondary-dark);
+// // }
+// //
+// // /*-----------------------*/
+// // /* Statusbar in Form Views */
+// // /*-----------------------*/
+// // .o_form_view .o_form_statusbar > .o_statusbar_status > .o_arrow_button.btn-primary.disabled {
+// //     color: $brand-primary; // Disabled step arrow color
+// // }
+// //
+// // .o_form_view .o_form_statusbar > .o_statusbar_status > .o_arrow_button:not(.disabled):hover {
+// //     color: $brand-primary; // Hover effect for active arrow steps
+// // }
+// //
+// // /*-----------------------*/
+// // /* Dropdown and Icon Buttons */
+// // /*-----------------------*/
+// // .o_dropdown_toggler_btn,
+// // .o_dropdown_toggler_btn:hover,
+// // .o_dropdown_toggler_btn:focus,
+// // .btn-icon,
+// // .o_graph_button {
+// //     text-transform: none !important;
+// //     color: $gray-dark !important; // Unified gray color for icons
+// //     background-color: transparent !important;
+// //     border: none !important;
+// // }
+// //
+// // /* Remove border radius from dropdowns */
+// // .dropdown-menu {
+// //     border-radius: 0px;
+// // }
+// //
+// // /*-----------------------*/
+// // /* Highlighting Elements */
+// // /*-----------------------*/
+// // oe_highlight {
+// //     color: #ffffff !important;
+// //     background-color: $brand-primary !important; // Highlight element color
+// // }
+// //
+// // /* External link-style button */
+// // .o_external_button {
+// //     color: $brand-primary !important;
+// //     background: #ffffff;
+// // }
+// //
+// // /* Generic icon buttons */
+// // .o_button_icon {
+// //     color: $brand-primary !important;
+// // }
+// //
+// // .o_action_manager {
+// //     background-image: url('../img/background.jpg');
+// //     background-size: cover;           // Makes image cover the entire area
+// //     background-repeat: no-repeat;
+// //     background-position: center center;
+// // }
+// //
+// // //
+// // // .o_app {
+// // //     background-color: rgba(255, 255, 255, 0.8); // White with slight transparency
+// // //     border-radius: 8px;
+// // // }
+//
+// //++++++++++++++++++++++++++=====
+//
+// /*
+//  * Universal SCSS Override for Odoo 18
+//  * This stylesheet provides complete control over Odoo's backend appearance
+//  * No dependency on light/dark mode detection — full override
+//  * Modify backgrounds, text, icons, buttons, and component visuals globally
+//  * Place inside your module and load via web.assets_backend
+//  */
+//
+// /*--------------------------------------*/
+// /* Font Setup */
+// /*--------------------------------------*/
+// @font-face {
+//   font-family: 'Poppins';
+//   src: url('/custom_dark/static/src/font/Poppins-Bold.ttf');
+// }
+//
+// /*--------------------------------------*/
+// /* Universal Color Variables */
+// /*--------------------------------------*/
+// $main-bg: #101216;                 // Base background color
+// $card-bg: #1A1D23;                 // Card/content area background
+// $accent-color: #5AD8A6;            // Primary accent color
+// $text-color: #ECEFF4;              // Default text color
+// $icon-color: #FAD02E;              // Icon color override
+// $border-color: #2E3440;            // Border color
+// $hover-color: #3B4252;             // Hover state backgrounds
+// $link-color: #88C0D0;              // Hyperlink color
+// $error-color: #BF616A;             // Error/alert highlights
+//
+// /*--------------------------------------*/
+// /* Base Body and Fonts */
+// /*--------------------------------------*/
+// @font-face {
+//     font-family: poppins;
+//     src: url(../src/font/Poppins-Bold.ttf)
+// }
+// body, .o_web_client, .o_content, .o_action_manager {
+//   background-color: $main-bg !important;
+//   color: $text-color !important;
+//   font-family: 'Poppins', sans-serif;
+// }
+//
+// /*--------------------------------------*/
+// /* Headers and Text */
+// /*--------------------------------------*/
+// h1, h2, h3, h4, h5, h6,
+// label, p, span, .text-muted,
+// .o_main_navbar span, .o_form_label, .o_field_widget {
+//   color: $text-color !important;
+// }
+//
+// /*--------------------------------------*/
+// /* Navbar Styling */
+// /*--------------------------------------*/
+// .o_main_navbar {
+//   background-color: $card-bg !important;
+//   color: $text-color !important;
+//   border-bottom: 1px solid $border-color;
+// }
+//
+// .o_main_navbar .dropdown-toggle,
+// .o_main_navbar a, .o_main_navbar button {
+//   color: $text-color !important;
+//   background-color: transparent;
+// }
+//
+// .o_main_navbar a:hover,
+// .o_main_navbar button:hover {
+//   background-color: $hover-color !important;
+// }
+//
+// /*--------------------------------------*/
+// /* Sidebar, Control Panel, and Sheets */
+// /*--------------------------------------*/
+// .o_control_panel, .o_form_sheet_bg, .o_form_view .o_form_sheet, .o_form_view {
+//   background-color: $card-bg !important;
+//   color: $text-color;
+//   border-color: $border-color;
+// }
+//
+// /*--------------------------------------*/
+// /* App Icons and Dashboard */
+// /*--------------------------------------*/
+// .o_app {
+//   background-color: lighten($main-bg, 5%);
+//   color: $text-color;
+//   border-radius: 8px;
+// }
+//
+// .o_app_icon, .o_app span.fa, .o_app i {
+//   color: $icon-color !important; // Customize all app icon colors
+// }
+//
+// /*--------------------------------------*/
+// /* Buttons */
+// /*--------------------------------------*/
+// .btn, .btn-primary, .btn-secondary {
+//   background-color: $accent-color !important;
+//   color: $main-bg !important;
+//   border: none;
+//   border-radius: 4px;
+// }
+//
+// .btn:hover, .btn:focus {
+//   background-color: darken($accent-color, 10%) !important;
+// }
+//
+// .btn-link {
+//   color: $link-color !important;
+//   text-decoration: underline;
+// }
+//
+// /*--------------------------------------*/
+// /* Form Fields and Inputs */
+// /*--------------------------------------*/
+// input, select, textarea {
+//   background-color: $main-bg !important;
+//   color: $text-color !important;
+//   border: 1px solid $border-color;
+// }
+//
+// input:focus, textarea:focus, select:focus {
+//   border-color: $accent-color !important;
+// }
+//
+// /*--------------------------------------*/
+// /* Kanban, List, Graph, Calendar */
+// /*--------------------------------------*/
+// .o_kanban_view .o_kanban_record,
+// .o_list_view, .o_graph_view, .o_calendar_view {
+//   background-color: $card-bg !important;
+//   color: $text-color;
+//   border-color: $border-color;
+// }
+//
+// /*--------------------------------------*/
+// /* Messages, Chatter, Discuss */
+// /*--------------------------------------*/
+// .o_ChatterTopbar, .o_Message, .o_mail_thread {
+//   background-color: $main-bg;
+//   color: $text-color;
+// }
+//
+// .o_Message_author, .o_Message_date {
+//   color: lighten($text-color, 20%) !important;
+// }
+//
+// /*--------------------------------------*/
+// /* Tooltips and Popovers */
+// /*--------------------------------------*/
+// .tooltip-inner, .popover {
+//   background-color: $card-bg;
+//   color: $text-color;
+//   border: 1px solid $border-color;
+// }
+//
+// /*--------------------------------------*/
+// /* Scrollbar Styling */
+// /*--------------------------------------*/
+// ::-webkit-scrollbar {
+//   width: 8px;
+// }
+//
+// ::-webkit-scrollbar-thumb {
+//   background-color: $accent-color;
+// }
+//
+// ::-webkit-scrollbar-track {
+//   background-color: darken($main-bg, 5%);
+// }
+//
+// /*--------------------------------------*/
+// /* Modals */
+// /*--------------------------------------*/
+// .modal-content {
+//   background-color: $card-bg;
+//   color: $text-color !important;
+//   border: 1px solid $border-color !important;
+// }
+//
+// /*--------------------------------------*/
+// /* Alerts, Badges, and Highlights */
+// /*--------------------------------------*/
+// .alert-danger, .badge-danger, .text-danger {
+//   color: $error-color !important;
+// }
+//
+// .oe_highlight {
+//   background-color: $accent-color !important;
+//   color: $main-bg !important;
+//   border-radius: 4px;
+// }
+//
+// /*--------------------------------------*/
+// /* Drop-downs and Menus */
+// /*--------------------------------------*/
+// .dropdown-menu {
+//   background-color: $card-bg !important;
+//   color: $text-color !important;
+//   border: 1px solid $border-color !important;
+// }
+//
+// .dropdown-item:hover {
+//   background-color: $text-color !important;
+// }
+//
+// /*--------------------------------------*/
+// /* Full Control Theme End */
+// /*--------------------------------------*/
